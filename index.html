@@ -1,44 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chronos - Prototype</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="js/script.js" defer></script>
-    </head>
-    <body>
-        <h1 class="text-3xl font-bold underline text-red-400">Hello world!</h1>
-        <p class="">This is a prototype for the SBH website.</p>
-        <div class="">
-            <dialog id="auth-modal" class="backdrop:bg-black/20">
-                <form
-                    action="admin.html"
-                    method="post"
-                    class="flex flex-col gap-2 p-4 rounded w-[300px]"
-                >
-                    <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        placeholder="Username"
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                    />
-                    <button type="submit" class="bg-indigo-300">Login</button>
-                    <button
-                        type="button"
-                        class="bg-indigo-300"
-                        id="modal-close"
-                    >
-                        Cancel
-                    </button>
-                </form>
-            </dialog>
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronos - Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline text-red-400">Hello world!</h1>
+    <p class="">This is a prototype for the SBH website.</p>
+    <div class="">
+      <dialog id="auth-modal" class="backdrop:bg-black/20">
+        <form
+          action="admin.html"
+          method="post"
+          class="flex flex-col gap-2 p-4 rounded w-[300px]"
+        >
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+          <button type="submit" class="bg-indigo-300">Login</button>
+          <button type="button" class="bg-indigo-300" id="modal-close">
+            Cancel
+          </button>
+        </form>
+      </dialog>
+    </div>
+  </body>
 </html>
