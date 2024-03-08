@@ -1,44 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chronos - Prototype</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="js/script.js" defer></script>
-    </head>
-    <body>
-        <h1 class="text-3xl font-bold underline text-red-400">Hello world!</h1>
-        <p class="">This is a prototype for the SBH website.</p>
-        <div class="">
-            <dialog id="auth-modal" class="backdrop:bg-black/20">
-                <form
-                    action="admin.html"
-                    method="post"
-                    class="flex flex-col gap-2 p-4 rounded w-[300px]"
-                >
-                    <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        placeholder="Username"
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Password"
-                    />
-                    <button type="submit" class="bg-indigo-300">Login</button>
-                    <button
-                        type="button"
-                        class="bg-indigo-300"
-                        id="modal-close"
-                    >
-                        Cancel
-                    </button>
-                </form>
-            </dialog>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBH Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body class="min-h-screen bg-sky-900 flex items-center justify-center">
+    <div class="container mx-auto max-w-lg bg-white rounded-lg shadow-md">
+      <div class="p-8" id="loginSection">
+        <div class="text-center mb-8">
+          <h1 class="text-2xl font-semibold">Login</h1>
+          <p class="text-sm text-gray-600">Welcome back! Please login to continue.</p>
         </div>
-    </body>
+        <form id="loginForm" action="admin.html" method="post">
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter your password" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+            <a href="#" class="text-sm text-green-500 block mt-2">Forgot password?</a>
+          </div>
+          <button type="submit" class="w-full bg-green-500 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-green-600">Login</button>
+        </form>
+        <div class="signup text-center mt-4">
+          <span class="text-sm">Don't have an account?
+           <a href="#" id="showSignup" class="text-green-500 cursor-pointer">Signup</a>
+          </span>
+        </div>
+      </div>
+      <div class="p-8 hidden" id="signupSection">
+        <div class="text-center mb-8">
+          <h1 class="text-2xl font-semibold">Sign Up</h1>
+          <p class="text-sm text-gray-600">Join us today! Create your account.</p>
+        </div>
+        <form id="signupForm" action="admin.html" method="post" class="mb-6">
+          <div class="mb-4">
+            <div class="flex flex-column">
+            <label for="signupType" id="signupLabel" class="block text-sm font-medium text-green-500 mb-2 cursor-pointer">Sign up as Institution:</label>
+            <br>
+            <input type="checkbox" id="signupType" name="signupType" class="mb-2 mx-2 hidden"  ></div><br><br>
+  
+            <div id="individualForm">
+              <h3 class="text-lg font-semibold mb-2">Individual</h3>
+              <label for="individualName" class="block text-sm mb-1">Name:</label>
+              <input type="text" id="individualName" name="individualName" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+              <label for="individualEmail" class="block text-sm mb-1">Email:</label>
+              <input type="email" id="individualEmail" name="individualEmail" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+              <label for="individualPassword" class="block text-sm mb-1">Password:</label>
+              <input type="password" id="individualPassword" name="individualPassword" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+              <label for="confirmPassword" class="block text-sm mb-1">Confirm Password:</label>
+              <input type="confirmpassword" id="confirmPassword" name="confirmPassword" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+            
+            </div>
+  
+            <div id="teamForm" style="display: none;">
+              <h3 class="text-lg font-semibold mb-2">Institution</h3>
+              <label for="InstitutionName" class="block text-sm mb-1">Institution Name:</label>
+              <input type="text" id="InstitutionName" name="InstitutionName" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+              <label for="InstitutionEmail" class="block text-sm mb-1">Institution Email:</label>
+              <input type="email" id="mail" name="Email" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+              <label for="Password" class="block text-sm mb-1"> Password:</label>
+              <input type="password" id="Password" name="Password" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+              <label for="confirmPassword" class="block text-sm mb-1">Confirm Password:</label>
+              <input type="confirmpassword" id="confirmPassword" name="confirmPassword" class="w-full px-3 py-2 border rounded-md outline-none focus:border-teal-500">
+            </div>
+          </div>
+          <button type="submit" class=" w-full bg-green-600 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-green-700">Sign Up</button>
+          <div class="login text-center mt-4">
+            <span class="text-sm">Already have an account?
+             <a href="#" id="showLoginFromSignup" class="text-green-500 cursor-pointer">Login</a>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    
+  
 </html>
+

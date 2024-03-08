@@ -17,3 +17,35 @@ function toggleDropdown() {
 		dropdownContent.classList.add("hidden");
 	}
 }
+document.addEventListener('DOMContentLoaded', function () {
+	const showSignup = document.getElementById('showSignup');
+	const showLoginFromSignup = document.getElementById('showLoginFromSignup');
+	const loginSection = document.getElementById('loginSection');
+	const signupSection = document.getElementById('signupSection');
+	const signupType = document.getElementById('signupType');
+	const individualForm = document.getElementById('individualForm');
+	const teamForm = document.getElementById('teamForm');
+	const signupLabel = document.getElementById('signupLabel');
+
+	showSignup.addEventListener('click', function () {
+	  loginSection.classList.add('hidden');
+	  signupSection.classList.remove('hidden');
+	});
+
+	showLoginFromSignup.addEventListener('click', function () {
+	  loginSection.classList.remove('hidden');
+	  signupSection.classList.add('hidden');
+	});
+
+	signupType.addEventListener('change', function () {
+	  if (this.checked) {
+		individualForm.style.display = 'none';
+		teamForm.style.display = 'block';
+		signupLabel.textContent = 'Sign up as Individual';
+	  } else {
+		individualForm.style.display = 'block';
+		teamForm.style.display = 'none';
+		signupLabel.textContent = 'Sign up as Institution';
+	  }
+	});
+  });
