@@ -10,81 +10,108 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 		/>
+		<link rel="stylesheet" href="/css/component.css">
 	</head>
 	<body>
 		<!-- Dropdown Navbar -->
-		<div class="lg:hidden">
-			<div class="dropdown w-screen bg-sky-900">
-				<div
-					class="flex justify-between p-4 font-mono text-white text-xl"
-				>
-					<a class="block hover:text-amber-300 uppercase" href="#">
-						Chronos
-					</a>
-
-					<button
-						class="block hover:text-amber-200"
-						onclick="toggleDropdown()"
+		<main class="flex flex-col lg:flex-row">
+			<div class="lg:hidden">
+				<div class="dropdown w-screen bg-sky-900">
+					<div
+						class="flex justify-between p-4 font-mono text-white text-xl"
 					>
-						<i class="fa fa-bars"></i>
-					</button>
+						<a class="block hover:text-amber-300 uppercase" href="#">
+							Chronos
+						</a>
+	
+						<button
+							class="block hover:text-amber-200"
+							onclick="toggleDropdown()"
+						>
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+					<div
+						id="dropdownContent"
+						class="hidden bg-sky-800 font-semibold text-white text-base"
+					>
+						<a class="block p-2 px-4 hover:text-amber-200" href="#">
+							New Routine
+						</a>
+						<a class="block p-2 px-4 hover:text-amber-200" href="#">
+							My Routines
+						</a>
+						<a class="block p-2 px-4 hover:text-amber-200" href="#">
+							About Chronos
+						</a>
+						<a class="block p-2 px-4 hover:text-amber-200" href="#">
+							Help
+						</a>
+						<a class="block p-2 px-4 hover:text-amber-200" href="#">
+							User
+						</a>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Sidebar -->
+			
+	
+			
+			<div
+				class="hidden  lg:flex lg:flex-col justify-between items-center m-0 p-0 lg:py-4 lg:w-52 md:w-100 lg:h-screen md:relative bg-sky-900 fixed inset-y-0 left-0 overflow-auto font-semibold text-base text-white"
+			>
+				<a
+					class="block p-4 hover:text-amber-300 text-xl font-mono uppercase"
+					href="#"
+				>
+					Chronos
+				</a>
+				<div
+					class="flex lg:flex-col justify-center items-start text-left px-4"
+				>
+					<a class="block p-2 hover:text-amber-200" href="#">
+						<i class="fa fa-plus mr-2"></i>New Routine
+					</a>
+					<a class="block p-2 hover:text-amber-200" href="#">
+						<i class="fa fa-calendar mr-2"></i>My Routines
+					</a>
 				</div>
 				<div
-					id="dropdownContent"
-					class="hidden bg-sky-800 font-semibold text-white text-base"
+					class="flex lg:flex-col justify-center items-start text-left px-4"
 				>
-					<a class="block p-2 px-4 hover:text-amber-200" href="#">
-						New Routine
+					<a class="block p-2 hover:text-amber-200" href="#">
+						<i class="fa fa-info-circle mr-2"></i>About Chronos
 					</a>
-					<a class="block p-2 px-4 hover:text-amber-200" href="#">
-						My Routines
+					<a class="block p-2 hover:text-amber-200" href="#">
+						<i class="fa fa-question-circle mr-2"></i>Help
 					</a>
-					<a class="block p-2 px-4 hover:text-amber-200" href="#">
-						About Chronos
-					</a>
-					<a class="block p-2 px-4 hover:text-amber-200" href="#">
-						Help
-					</a>
-					<a class="block p-2 px-4 hover:text-amber-200" href="#">
-						User
+					<a class="block p-2 hover:text-amber-200" href="#">
+						<i class="fa fa-user mr-2"></i>User
 					</a>
 				</div>
 			</div>
-		</div>
 
-		<!-- Sidebar -->
-		<div
-			class="hidden lg:flex lg:flex-col justify-between items-center m-0 p-0 lg:py-4 lg:w-48 md:w-100 lg:h-screen md:relative bg-sky-900 fixed inset-y-0 left-0 overflow-auto font-semibold text-base text-white"
-		>
-			<a
-				class="block p-4 hover:text-amber-300 text-xl font-mono uppercase"
-				href="#"
-			>
-				Chronos
-			</a>
-			<div
-				class="flex lg:flex-col justify-center items-start text-left px-4"
-			>
-				<a class="block p-2 hover:text-amber-200" href="#">
-					<i class="fa fa-plus mr-2"></i>New Routine
-				</a>
-				<a class="block p-2 hover:text-amber-200" href="#">
-					<i class="fa fa-calendar mr-2"></i>My Routines
-				</a>
+			<!-- Calendar Entries -->
+			<div class="lg:flex lg:flex-row flex-col w-full lg:h-[150px] h-[250px] mt-4">
+			   
+				
+				<div class="lg:w-11/12 w:full flex justify-end lg:py-2 px-3 ">
+				<div class="w-full ">
+					<!-- <label htmlFor="username" class="my-2 block text-xl font-medium leading-6 "></label> -->
+					<div class="relative">
+						<input type="text"  placeholder="Add your future calendar entries here "  rows="3" class="w-full rounded-md border-2 border-gray-300 px-3 py-3 "></input>
+						<i class="fa fa-microphone absolute right-0 top-[25%] text-gray-500 px-2 text-2xl"></i>
+					</div>
+					
+				</div>
+				</div>
+				<div class="text-center mt-2 md:mt-2 lg:w-1/12 w-full   px-2">
+					<button class="button-29 lg:w-full w-3/12" role="button">Add it</button>
+				</div>
 			</div>
-			<div
-				class="flex lg:flex-col justify-center items-start text-left px-4"
-			>
-				<a class="block p-2 hover:text-amber-200" href="#">
-					<i class="fa fa-info-circle mr-2"></i>About Chronos
-				</a>
-				<a class="block p-2 hover:text-amber-200" href="#">
-					<i class="fa fa-question-circle mr-2"></i>Help
-				</a>
-				<a class="block p-2 hover:text-amber-200" href="#">
-					<i class="fa fa-user mr-2"></i>User
-				</a>
-			</div>
-		</div>
+		</main>
+		
+	</div>
 	</body>
 </html>
